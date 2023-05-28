@@ -53,7 +53,7 @@ for ix,s in tqdm(tenumerate(questions)):
     test_dataset[ix]['time'] = extract_time(test_dataset[ix]['question'])
     test_dataset[ix]['entities'] = [x['entity'][0] for x in clean_ner_result]
     test_dataset[ix]['entity_positions'] = clean_ner_result
-with open(output_path + 'test_A.json', 'w',encoding='utf-8') as obj:
+with open(output_path + 'test.json', 'w',encoding='utf-8') as obj:
     obj.write(json.dumps(test_dataset, indent=4,ensure_ascii=False))
 print('TEST DATASET PROCESSED')
 
